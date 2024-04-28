@@ -1,23 +1,16 @@
 package hu.bearmaster.utils.lombok;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 import java.time.ZonedDateTime;
 
-@Getter
-@Setter
-//@NoArgsConstructor
-@RequiredArgsConstructor(staticName = "post")
-@AllArgsConstructor
+@Data
 @ToString(onlyExplicitlyIncluded = true)
-@EqualsAndHashCode
+@Builder(toBuilder = true)
 public class Post {
 
     private final Long id;

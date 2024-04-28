@@ -1,11 +1,18 @@
 package hu.bearmaster.utils.lombok;
 
+import lombok.Builder;
+import lombok.Value;
+import lombok.With;
+
+@Value(staticConstructor = "user")
+@Builder
 public class User {
 
-    private Long id;
+    Long id;
 
-    private String username;
+    String username;
 
-    private String displayName;
+    @With
+    String displayName;
 
 }
