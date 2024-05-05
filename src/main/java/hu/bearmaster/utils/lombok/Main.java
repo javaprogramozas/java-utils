@@ -1,5 +1,9 @@
 package hu.bearmaster.utils.lombok;
 
+import java.time.LocalDate;
+
+import static hu.bearmaster.utils.lombok.MyUtils.NAME;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +16,15 @@ public class Main {
         Post another = post.toBuilder()
                 .description("Another desc")
                 .build();
+
+        HighlightedPost high = HighlightedPost.builder()
+                .post(post)
+                .highlightedUntil(LocalDate.now())
+                .build();
+
+        high.getLikes();
+
+        String name = NAME;
 
         System.out.println(post);
         System.out.println(post.equals(another));

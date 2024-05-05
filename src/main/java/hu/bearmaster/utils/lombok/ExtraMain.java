@@ -1,7 +1,6 @@
 package hu.bearmaster.utils.lombok;
 
 import lombok.Cleanup;
-import lombok.Lombok;
 import lombok.SneakyThrows;
 import lombok.Synchronized;
 import lombok.extern.java.Log;
