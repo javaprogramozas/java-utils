@@ -6,14 +6,12 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import lombok.extern.jackson.Jacksonized;
 
 import java.time.ZonedDateTime;
 
 @Data
 @ToString(onlyExplicitlyIncluded = true)
 @SuperBuilder(toBuilder = true)
-@Jacksonized
 public class Post {
 
     private final Long id;
