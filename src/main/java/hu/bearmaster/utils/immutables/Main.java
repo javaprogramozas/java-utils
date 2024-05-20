@@ -1,6 +1,7 @@
 package hu.bearmaster.utils.immutables;
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -10,6 +11,10 @@ public class Main {
                 .username("test")
                 .displayName("Teszt Elek")
                 .addAllPosts(List.of("one"))
+                .addPost("two")
+                .addPosts("three", "last")
+                .putTopic("IT", 3)
+                .putTopic(Map.entry("Animals", 2))
                 .build();
 
         System.out.println(user);

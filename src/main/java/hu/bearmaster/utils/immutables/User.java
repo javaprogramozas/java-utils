@@ -2,11 +2,12 @@ package hu.bearmaster.utils.immutables;
 
 import org.immutables.value.Value;
 
-import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 @Value.Immutable
-@Value.Style(stagedBuilder = true)
+@Value.Style(depluralize = true)
 public interface User {
 
     long getId();
@@ -22,7 +23,9 @@ public interface User {
         return Role.USER;
     }
 
-    List<String> getPosts();
+    Set<String> getPosts();
+
+    Map<String, Integer> getTopics();
 
     //@Value.Derived
     @Value.Lazy
