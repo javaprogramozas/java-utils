@@ -1,7 +1,6 @@
 package hu.bearmaster.utils.immutables;
 
 import java.util.List;
-import java.util.Optional;
 
 public class Main {
 
@@ -10,21 +9,23 @@ public class Main {
                 .id(1L)
                 .username("test")
                 .displayName("Teszt Elek")
-                .posts(List.of("one", "two"))
+                .addAllPosts(List.of("one"))
                 .build();
 
         System.out.println(user);
 
         ImmutableUser realCopy = ImmutableUser.builder()
-                .from(user)
                 .id(2)
+                .username("copy")
                 .role(Role.ADMIN)
-                .displayName(Optional.empty())
                 .build();
 
         System.out.println(realCopy);
 
         System.out.println(user.getNumberOfPosts());
         System.out.println(user.getNumberOfPosts());
+
+        ImmutableMiniPost post = new ImmutableMiniPost(5, "Mini");
+        System.out.println(post);
     }
 }

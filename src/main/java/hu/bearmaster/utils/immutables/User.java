@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
-@Value.Style(redactedMask = "***")
+@Value.Style(stagedBuilder = true)
 public interface User {
 
     long getId();
