@@ -1,4 +1,4 @@
-package hu.bearmaster.utils.immutables;
+package hu.bearmaster.utils.immutables.model;
 
 import org.immutables.value.Value;
 

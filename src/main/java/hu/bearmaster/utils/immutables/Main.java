@@ -1,12 +1,16 @@
 package hu.bearmaster.utils.immutables;
 
+import hu.bearmaster.utils.immutables.model.ImmutableMiniPost;
+import hu.bearmaster.utils.immutables.model.Role;
+import hu.bearmaster.utils.immutables.model.User;
+
 import java.util.List;
 import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
-        ImmutableUser user = ImmutableUser.builder()
+        User user = User.builder()
                 .id(1L)
                 .username("test")
                 .displayName("Teszt Elek")
@@ -15,14 +19,16 @@ public class Main {
                 .addPosts("three", "last")
                 .putTopic("IT", 3)
                 .putTopic(Map.entry("Animals", 2))
+                .active(true)
                 .build();
 
         System.out.println(user);
 
-        ImmutableUser realCopy = ImmutableUser.builder()
+        User realCopy = User.builder()
                 .id(2)
                 .username("copy")
                 .role(Role.ADMIN)
+                .active(false)
                 .build();
 
         System.out.println(realCopy);

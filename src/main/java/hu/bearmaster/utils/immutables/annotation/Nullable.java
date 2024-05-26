@@ -1,4 +1,4 @@
-package hu.bearmaster.utils.immutables;
+package hu.bearmaster.utils.immutables.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package hu.bearmaster.utils.immutables;
+package hu.bearmaster.utils.immutables.model;
 
 import org.immutables.value.Value;
 
@@ -7,7 +7,6 @@ import java.util.Optional;
 import java.util.Set;
 
 @Value.Immutable
-@Value.Style(depluralize = true)
 public interface User {
 
     long getId();
@@ -17,6 +16,8 @@ public interface User {
 
     @Value.Redacted
     Optional<String> getDisplayName();
+
+    boolean isActive();
 
     @Value.Default
     default Role getRole() {
@@ -34,4 +35,9 @@ public interface User {
         return getPosts().size();
     }
 
+    static Builder builder() {
+        return new Builder();
+    }
+
+    class Builder extends UserBuilder {}
 }
