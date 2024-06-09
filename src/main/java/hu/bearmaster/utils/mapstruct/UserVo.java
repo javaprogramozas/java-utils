@@ -1,23 +1,33 @@
 package hu.bearmaster.utils.mapstruct;
 
+import java.util.List;
 import java.util.StringJoiner;
 
 public class UserVo {
 
-    private final long id;
+    private final long userId;
 
     private final String username;
 
     private final String role;
 
-    private UserVo(long id, String username, String role) {
-        this.id = id;
+    private final String email;
+
+    private final List<String> postTitles;
+
+    private final int numberOfPosts;
+
+    public UserVo(long userId, String username, String role, String email, List<String> postTitles, int numberOfPosts) {
+        this.userId = userId;
         this.username = username;
         this.role = role;
+        this.email = email;
+        this.postTitles = postTitles;
+        this.numberOfPosts = numberOfPosts;
     }
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
     public String getUsername() {
@@ -28,12 +38,27 @@ public class UserVo {
         return role;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public List<String> getPostTitles() {
+        return postTitles;
+    }
+
+    public int getNumberOfPosts() {
+        return numberOfPosts;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", UserVo.class.getSimpleName() + "[", "]")
-                .add("id=" + id)
+                .add("userId=" + userId)
                 .add("username='" + username + "'")
                 .add("role='" + role + "'")
+                .add("email='" + email + "'")
+                .add("postTitles=" + postTitles)
+                .add("numberOfPosts=" + numberOfPosts)
                 .toString();
     }
 
@@ -42,15 +67,18 @@ public class UserVo {
     }
 
     public static final class UserVoBuilder {
-        private long id;
+        private long userId;
         private String username;
         private String role;
+        private String email;
+        private List<String> postTitles;
+        private int numberOfPosts;
 
         private UserVoBuilder() {
         }
 
-        public UserVoBuilder id(long id) {
-            this.id = id;
+        public UserVoBuilder userId(long userId) {
+            this.userId = userId;
             return this;
         }
 
@@ -64,8 +92,23 @@ public class UserVo {
             return this;
         }
 
+        public UserVoBuilder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public UserVoBuilder postTitles(List<String> postTitles) {
+            this.postTitles = postTitles;
+            return this;
+        }
+
+        public UserVoBuilder numberOfPosts(int numberOfPosts) {
+            this.numberOfPosts = numberOfPosts;
+            return this;
+        }
+
         public UserVo build() {
-            return new UserVo(id, username, role);
+            return new UserVo(userId, username, role, email, postTitles, numberOfPosts);
         }
     }
 }
