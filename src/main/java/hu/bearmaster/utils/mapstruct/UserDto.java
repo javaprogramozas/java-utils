@@ -4,6 +4,7 @@ import hu.bearmaster.utils.immutables.model.Role;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.StringJoiner;
 
 public class UserDto {
@@ -30,16 +31,16 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public Optional<String> getUsername() {
+        return Optional.ofNullable(username);
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public Role getRole() {
-        return role;
+    public Optional<Role> getRole() {
+        return Optional.ofNullable(role);
     }
 
     public void setRole(Role role) {

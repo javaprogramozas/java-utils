@@ -5,9 +5,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import java.util.List;
-
-@Mapper
+@Mapper(uses = UtilityMapper.class)
 public interface UserMapper {
 
     @Mapping(target = "userId", source = "user.id")

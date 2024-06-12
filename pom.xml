@@ -48,6 +48,13 @@
             <version>2.17.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.8</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -74,6 +81,17 @@
                             <version>1.5.5.Final</version>
                         </path>
                     </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>
+                            -Amapstruct.verbose=true
+                        </arg>
+                        <arg>
+                            -Amapstruct.defaultComponentModel=spring
+                        </arg>
+                        <arg>
+                            -Amapstruct.unmappedTargetPolicy=IGNORE
+                        </arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
